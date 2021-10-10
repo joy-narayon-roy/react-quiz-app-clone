@@ -1,5 +1,10 @@
 import React from "react";
+import Videos from "../Videos";
 
 export default function Home() {
-  return <div>This is from Home.jsx</div>;
+  return (
+    <>
+      <Videos />
+    </>
+  );
 }
