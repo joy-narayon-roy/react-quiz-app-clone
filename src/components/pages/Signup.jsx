@@ -1,4 +1,5 @@
 import React from "react";
+import signup_img from "../../accet/signup.svg";
 import Button from "../Button";
 import Checkbox from "../Checkbox";
 import Form from "../Form";
@@ -11,7 +12,7 @@ export default function Signup() {
     <>
       <h1>Creat an account</h1>
       <div className="column">
-        <Illustration />
+        <Illustration img={signup_img} />
         <Form className={`signup`}>
           <Textinput type="text" placeholder="Enter Your Name" icon="person" />
           <Textinput
@@ -27,10 +28,10 @@ export default function Signup() {
           />
           <Checkbox text="I agree to the Terms &amp; Conditions" />
           <Button text="Submit" />
+          <div className="info">
+            Already have an account? <a href="login.html">Login</a> instead.
+          </div>
         </Form>
-        <div className="info">
-          Already have an account? <a href="login.html">Login</a> instead.
-        </div>
       </div>
     </>
   );
