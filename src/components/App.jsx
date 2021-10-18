@@ -1,18 +1,27 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Layout from "./Layout";
-// import Login from "./pages/Login";
-// import Signup from "./pages/Signup";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
 import Quiz from "./pages/Quiz";
+import Result from "./pages/Result";
+import Signup from "./pages/Signup";
 import "./styles/App.css";
 
 export default function App() {
   return (
     <>
-      <Layout>
-        {/* <Login /> */}
-        {/* <Signup /> */}
-        <Quiz />
-      </Layout>
+      <Router>
+        <Layout>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/signup" component={Signup} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/quiz" component={Quiz} />
+            <Route exact path="/result" component={Result} />
+          </Switch>
+        </Layout>
+      </Router>
     </>
   );
 }
