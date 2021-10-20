@@ -3,8 +3,8 @@ import "./styles/Button.css";
 
 export default function Button({ text, ...rest }) {
   return (
-    <div class="button" {...rest}>
+    <button className="button" {...rest}>
       <span>{text}</span>
-    </div>
+    </button>
   );
 }
