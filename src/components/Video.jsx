@@ -1,15 +1,16 @@
-import React from "react";
-import image from "../accet/3.jpg";
 import "./styles/Video.css";
 
-export default function Video() {
+export default function Video({ title, id, noq }) {
   return (
     <div className="video">
-      <img src={image} alt="" />
-      <p>#23 React Hooks Bangla - React useReducer hook Bangla</p>
+      <img
+        src={`http://img.youtube.com/vi/${id}/maxresdefault.jpg`}
+        alt={title}
+      />
+      <p>{title}</p>
       <div className="qmeta">
-        <p>10 Questions</p>
-        <p>Score : Not taken yet</p>
+        <p>{noq} Questions</p>
+        <p>Total points : {noq * 5}</p>
       </div>
     </div>
   );

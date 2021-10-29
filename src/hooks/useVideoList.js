@@ -7,34 +7,32 @@ import {
   ref,
   startAt,
 } from "firebase/database";
-import { useEffect } from "react";
-import { useState } from "react/cjs/react.development";
+import { useEffect, useState } from "react";
 
 export default function useVideoList(page) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [videos, setVideos] = useState([]);
   const [hasMore, setHasMore] = useState(true);
+
   useEffect(() => {
     async function fetchVideos() {
-      // Database Related Work
+      // database related works
       const db = getDatabase();
-      const videoRef = ref(db, "videos");
-
+      const videosRef = ref(db, "videos");
       const videoQuery = query(
-        videoRef,
+        videosRef,
         orderByKey(),
         startAt("" + page),
         limitToFirst(8)
       );
+
       try {
         setError(false);
         setLoading(true);
-        //request fierbase
+        // request firebase database
         const snapshot = await get(videoQuery);
-
         setLoading(false);
-
         if (snapshot.exists()) {
           setVideos((prevVideos) => {
             return [...prevVideos, ...Object.values(snapshot.val())];
@@ -48,6 +46,7 @@ export default function useVideoList(page) {
         setError(true);
       }
     }
+
     fetchVideos();
   }, [page]);
 
