@@ -21,8 +21,8 @@ export default function App() {
               <Route exact path="/" component={Home} />
               <PublicRoute exact path="/signup" component={Signup} />
               <PublicRoute exact path="/login" component={Login} />
-              <PtivateRoute exact path="/quiz" component={Quiz} />
-              <PtivateRoute exact path="/result" component={Result} />
+              <PtivateRoute exact path="/quiz/:id" component={Quiz} />
+              <PtivateRoute exact path="/result/:id" component={Result} />
             </Switch>
           </Layout>
         </AuthProvider>
