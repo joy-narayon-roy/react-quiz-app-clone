@@ -181,7 +181,7 @@
   border-radius: 5px;
 }
 
-.miniPlayer img {
+.miniPlayer {
   width: 300px;
   aspect-ratio: 16 / 9;
   object-fit: cover;
