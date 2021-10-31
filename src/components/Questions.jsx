@@ -3,14 +3,14 @@ import Answers from "./Answers.jsx";
 import "./styles/Question.css";
 import "./styles/Quiz.css";
 
-export default function Question() {
-  return (
-    <div className="question">
+export default function Question({ answers = [] }) {
+  return answers.map((answer, index) => (
+    <div className="question" key={index}>
       <div className="qtitle">
         <span className="material-icons-outlined"> help_outline </span>
-        Here goes the question from Learn with Sumit?
+        {answer.title}
       </div>
-      <Answers />
+      <Answers input={false} options={answer.options} />
     </div>
-  );
+  ));
 }

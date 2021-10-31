@@ -1,14 +1,13 @@
 import React from "react";
-import Question from "./Question";
+import Questions from "./Questions";
 import "./styles/Analysis.css";
 
-export default function Analysis() {
-  console.log(Question());
+export default function Analysis({ answers }) {
   return (
     <div className="analysis">
       <h1>Question Analysis</h1>
-      <h4>You answerd 5 out of 10 questions correctly</h4>
-      <Question />
+
+      <Questions answers={answers} />
     </div>
   );
 }
